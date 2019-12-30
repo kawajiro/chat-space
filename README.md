@@ -3,7 +3,7 @@
 |---|------|----|-------|
 |user|string|null:false|
 |email|string|null: false|
-|password|string|null: false｜_
+|password|string|null: false｜
 ### Association
 - has_many :users_groups
 
