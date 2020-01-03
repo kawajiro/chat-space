@@ -5,7 +5,9 @@
 |email|string|null: false|
 |password|string|null: false｜
 ### Association
-- has_many :groups, through: :users_groups
+- has_many :groups, through: :groups_users
+- has_many :messages
+
 
 ## messagesテーブル
 |Column|Type|Options|
@@ -14,15 +16,15 @@
 |text|text||
 |user_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :users
-- belongs_to :messages
+- belongs_to :user
+- belongs_to :message
 
 ## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
 ### Association
-- belongs_to :users
-- belongs_to :groups
+- belongs_to :user
+- belongs_to :group
 
 
 ## groupsテーブル
@@ -30,8 +32,9 @@
 |------|----|-------|
 |group|integer|null: false|
 ### Association
-- belongs_to :users
-- has_many_messages
+- has_many :users through: :groups_users
+- has_many :messages
+
 
 
 
