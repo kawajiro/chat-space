@@ -1,7 +1,7 @@
-## nameテーブル|Column|Type|Options|
+## usersテーブル|Column|Type|Options|
 |Column|Type|Options|
 |---|------|----|-------|
-|user|string|null:false|index: true|
+|name|string|null:false|index: true|
 |email|string|null: false|
 |password|string|null: false｜
 ### Association
@@ -24,8 +24,8 @@
 ## groups_usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name_id|string|null:false|
-|group_id|string|null:false|
+|user_id|integer|foreign_key: true|
+|group_id|integer|foreign_key: true|
 ### Association
 - belongs_to :user
 - belongs_to :group
