@@ -54,7 +54,6 @@ a {
       justify-content: flex-end;
       right: 40px;
       color: #38aef0;
-      // text-decoration: none;
   }
   
   }
@@ -142,7 +141,7 @@ a {
                 top: 0px;
                 right: 10px;
                 cursor: pointer;
-                  .form__mask__image {
+                  &__image {
                     font-size: 20px;
                     line-height: 50px;
                       .hidden {
@@ -208,7 +207,6 @@ a {
       height: 20px;
       display: flex;
       justify-content: space-between;
-      // justify-content: center;
       align-self: center;
     }
       .name-item {
