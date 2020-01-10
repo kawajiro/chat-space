@@ -1,0 +1,29 @@
+.message-box
+  .group-header
+    .group-p
+      %h3.group-main カレー
+      %p.menber-list うどん
+    .edit-button
+      Edit
+
+  .message-main
+    .messages
+      .one-message
+        .message-upperinfo
+          %p.message-talker kawano
+          %p.message-date 01/09
+        .message-text
+          %p.message-text 長い
+  .message-form
+    .message-new-massage
+      .input-content-box
+        .input-box
+          %form
+            %input.form__message
+            .form__mask
+              %label.form__mask__image
+                = icon('fa','image',class: 'icon')
+                .hidden
+                %input.hidden{type: 'file'}
+      .input-submit-btn
+      %input.form__submit{type: 'submit', value: 'Send'}
