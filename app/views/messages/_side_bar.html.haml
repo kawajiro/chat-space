@@ -2,20 +2,20 @@
   .side-header
     .side-username
       .name-item
-        aaa
+        = current_user.name
       .icon-item
         .edit
           = link_to "#" do
             = icon('fas','edit')
         .haguruma
-          = link_to "#" do
-            = icon('fas', 'cog')
+          = link_to edit_user_path(current_user) do
+            = icon('fas', 'cog', class: 'icon')
         
   .side-main
     .groups-room
       .group
         %h3.group-name test
         %p.group-messsage 12345678
-      .group
+      .group 
         %h3.group-name exam
         %p.group-messsage 87654321

@@ -59,7 +59,7 @@ a {
   }
 
   .message-main {
-    background-color: gray;
+    background-color: #fafafa;
     height: calc(100% - 190px); 
     width: calc(100vw - 300px);
       .messages {
@@ -89,7 +89,6 @@ a {
                   font-size: 12px;
                   margin-left: 10px;
                 }
-
             }
             .message-text {
               height: 21px;
@@ -214,12 +213,15 @@ a {
         margin-inline-start: 0px;
         line-height: center;
         color: #ffffff;
-        font-size: 16px;
+        font-size: 14px;
+        position: relative;
+        margin-left: 2px;
       }
 
       .icon-item {
         width: 60px;
         display: flex;
+        font-size: 15px;
           a{
             color: #ffffff;
           }
