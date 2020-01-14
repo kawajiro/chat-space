@@ -1,10 +1,10 @@
 .message-box
   .group-header
     .group-p
-      %h3.group-main カレー
-      %p.menber-list うどん
+      %h3.group-main @kawano
+      %p.menber-list @yujiro
     .edit-button
-      Edit
+      = link_to 'edit', edit_group_path(@group)
 
   .message-main
     .messages
@@ -18,12 +18,23 @@
     .message-new-massage
       .input-content-box
         .input-box
-          %form
-            %input.form__message
+          = form_for [@group, @message] do |f|
+            -# %input.form__message
+            = f.text_field :content, class: 'form__message', placeholder: 'type a message'
             .form__mask
-              %label.form__mask__image
-                = icon('fa','image',class: 'icon')
+              -# %label.form__mask__image
+              = f.label :image, class: 'form__mask__image' do
+                = icon('fas', 'image', class: 'icon')
                 .hidden
-                %input.hidden{type: 'file'}
-      .input-submit-btn
-      %input.input__submit{type: 'submit', value: 'Send'}
+                  -# %input.hidden{type: 'file'}
+                  -# %input.input__submit{type: 'submit', value: 'Send'}
+                  = f.submit 'Send', class: 'form__submit'
+
+      -#  .form
+      -# = form_for [@group, @message] do |f|
+      -#   = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      -#   .form__mask
+      -#     = f.label :image, class: 'form__mask__image' do
+      -#       = icon('fas', 'image', class: 'icon')
+      -#       = f.file_field :image, class: 'hidden'
+      -#   = f.submit 'Send', class: 'form__submit'
