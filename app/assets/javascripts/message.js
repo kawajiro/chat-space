@@ -62,16 +62,10 @@ $('#new_message').on('submit', function(e){
        $('.input__submit').prop('disabled',false);
      })
      .fail(function() {
-       console.log('fail');
+       console.log('');
      })
      .fail(function(){
       alert('error');
     })
 })
 });
-
-
-
-
-
-

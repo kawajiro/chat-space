@@ -9,36 +9,15 @@
   .message-main
     .messages
       =render @messages
-    -# .messages
-    -#   .one-message
-    -#     = message.user.name
-    -#   .message-upperinfo
-    -#     = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
-    -#     .message-text
-    -#       %p.message-text 長い
   .message-form
     .message-new-massage
       .input-content-box
         .input-box
           = form_for [@group, @message] do |f|
-            -# %input.form__message
             = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-            -# .new_message
             .form__mask
-              -# %label.form__mask__image
               = f.label :image, class: 'form__mask__image' do
                 = icon('fas', 'image', class: 'icon')
                 .hidden
                   = f.file_field :image, class: 'hidden'
-                  -# %input.hidden{type: 'file'}
-                  -# %input.input__submit{type: 'submit', value: 'Send'}
             = f.submit 'Send', class: 'input__submit'
-      -#  .form
-      -# = form_for [@group, @message] do |f|
-      -#   = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-      -#   .form__mask
-      -#     = f.label :image, class: 'form__mask__image' do
-      -#       = icon('fas', 'image', class: 'icon')
-      -#       = f.file_field :image, class: 'hidden'
-      -#   = f.submit 'Send', class: 'form__submit'
-
