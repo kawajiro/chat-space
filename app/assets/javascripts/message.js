@@ -61,9 +61,6 @@ $('#new_message').on('submit', function(e){
        $('form')[0].reset();
        $('.input__submit').prop('disabled',false);
      })
-     .fail(function() {
-       console.log('');
-     })
      .fail(function(){
       alert('error');
     })
