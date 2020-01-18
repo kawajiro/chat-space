@@ -19,7 +19,7 @@
     -#   .group 
     -#     %h3.group-name exam
     -#     %p.group-messsage 87654321
-    - current_user.groups.each do |group|
+    - current_user.groups.includes(:messages).each do |group|
       .group
         = link_to group_messages_path(group) do
           .group__name
