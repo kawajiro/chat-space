@@ -92,9 +92,7 @@ $('#new_message').on('submit', function(e){
           insertHTML += buildHTML(message)
         });
         $('.messages').append(insertHTML);
-        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
-        $("#new_message")[0].reset();
-        $(".form__submit").prop("disabled", false);
+        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight})
       }
     })
     .fail(function() {
