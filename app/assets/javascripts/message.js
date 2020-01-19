@@ -60,7 +60,7 @@ $(function(){
 $('#new_message').on('submit', function(e){
     e.preventDefault();
     var formData = new FormData(this);
-    var url = $(this).attr('action');
+    var url = $(this).attr('action')
     $.ajax({
       url: url,
       type: "POST",
@@ -69,17 +69,36 @@ $('#new_message').on('submit', function(e){
       processData: false,
       contentType: false
     })
-     .done(function(data){
-       console.log('success');
-       var html = buildHTML(data);
-       $('.messages').append(html);  
-       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});    
-       $('form')[0].reset();
-       $('.input__submit').prop('disabled',false);
-     })
+      .done(function(data){
+        var html = buildHTML(data);
+        $('.messages').append(html);      
+        $('form')[0].reset();
+      })
+})
+});
+
+  var reloadMessages = function() {
+    last_message_id = $('.message:last').data("message-id");
+    $.ajax({
+      url: "api/messages",
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id}
+    })
+    .done(function(messages) {
+      if (messages.length !== 0) {
+        var insertHTML = '';
+        $.each(messages, function(i, message) {
+          insertHTML += buildHTML(message)
+        });
+        $('.messages').append(insertHTML);
+        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+        $("#new_message")[0].reset();
+        $(".form__submit").prop("disabled", false);
+      }
+    })
     .fail(function() {
       console.log('error');
       alert("メッセージ送信に失敗しました");
     });
-  });
-});
+  };
