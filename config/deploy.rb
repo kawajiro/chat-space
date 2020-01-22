@@ -10,7 +10,7 @@ set :rbenv_type, :user
 set :rbenv_ruby, '2.5.1' 
 
 set :ssh_options, auth_methods: ['publickey'],
-                  keys: 'ssh -i Yujiro719.pem' 
+                  keys: ['~/.ssh/Yujiro719.pem']
 
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 
@@ -20,6 +20,11 @@ set :keep_releases, 5
 after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
+    invoke 'unicorn:restart'
+  end
+  
+  desc 'upload secrets.yml'
+  task :upload do
     on roles(:app) do |host|
       if test "[ ! -d #{shared_path}/config ]"
         execute "mkdir -p #{shared_path}/config"
