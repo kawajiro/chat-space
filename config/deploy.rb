@@ -36,4 +36,4 @@ namespace :deploy do
   after :finishing, 'deploy:cleanup'
 end
 
-set :linked_files, fetch(:linked_files, []).push("config/master.key")
+set :linked_files, fetch(:linked_files, []).push("config/secrets.yml")
