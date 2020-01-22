@@ -35,3 +35,5 @@ namespace :deploy do
   before :starting, 'deploy:upload'
   after :finishing, 'deploy:cleanup'
 end
+
+set :linked_files, fetch(:linked_files, []).push("config/master.key")
