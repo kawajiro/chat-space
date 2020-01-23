@@ -20,6 +20,7 @@ a {
   height: 100vh;
   width: calc(100vw - 300px);
   margin: 0;
+  overflow: hidden;
 
   .group-header {
     background-color: #ffffff; 
@@ -110,15 +111,15 @@ a {
     bottom: 0;
     .message-new-massage {
       height: 50px;
-      width: 1060px;
+      width: 100％;
       .input-content-box {
         height: 50px;
-        width: 948.98px;
+        width: 100%;
         color: #434a54;
         border-style: none;
           .input-box {
             height: 50px;
-            width: 948.98px;
+            width: 100%;
             padding: 0 40px 0 10px;
             color: #434a54;
             border-style: none;
