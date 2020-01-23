@@ -67,6 +67,7 @@ $(function(){
           var html = buildHTML(data);
           $('.messages').append(html);      
           $('form')[0].reset();
+          $(".input__submit").prop('disabled', false);
         })
   });
 
