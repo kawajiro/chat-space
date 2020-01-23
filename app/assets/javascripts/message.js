@@ -69,6 +69,10 @@ $(function(){
           $('form')[0].reset();
           $(".input__submit").prop('disabled', false);
         })
+     
+      .fail(function() {
+        alert("メッセージを入力してください");
+      })
   });
 
   var reloadMessages = function() {
