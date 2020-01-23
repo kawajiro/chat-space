@@ -237,25 +237,23 @@ a {
     background-color :#2f3e51;
     margin-top: 0px;
     margin-bottom: 0px;
-    .groups-room {
-      height: 100%;
-      padding: 20px 20px 0;
-      box-sizing: border-box;
-      overflow: scroll;
+    padding: 20px 20px 0;
+    box-sizing: border-box;
+    overflow: scroll;
       .group {
         box-sizing: border-box;
         height: 39px;
         width: 260px;
         margin-bottom: 40px;
-        .group-name {
+        .group__name {
           height: 17px;
           margin-bottom: 5px;
-          color: white;
+          color: #ffffff;
           font-size: 15px;
         }
-        .group-messsage {
+        .group__message {
           height: 17px;
-          color: white;
+          color: #ffffff;
           font-size: 11px;
         }
       }
@@ -271,11 +269,10 @@ a {
           color: white;
           font-size: 15px;
         }
-        .group-messsage {
+        .group-message {
           height: 17px;
           font-size: 11px;
         }
-      }
     }
   }
 }

@@ -12,13 +12,6 @@
             = icon('fas', 'cog', class: 'icon')
         
   .side-main
-    -# .groups-room
-    -#   .group
-    -#     %h3.group-name test
-    -#     %p.group-messsage 12345678
-    -#   .group 
-    -#     %h3.group-name exam
-    -#     %p.group-messsage 87654321
     - current_user.groups.includes(:messages).each do |group|
       .group
         = link_to group_messages_path(group) do
