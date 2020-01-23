@@ -1,8 +1,11 @@
 .message-box
   .group-header
     .group-p
-      %h3.group-main @kawano
-      %p.menber-list @yujiro
+      %h3.group-main
+        = @group.name
+      %p.menber-list
+        - @group.users.each do |user|
+          = user.name
     .edit-button
       = link_to 'edit', edit_group_path(@group)
 
