@@ -67,11 +67,14 @@ $(function(){
           var html = buildHTML(data);
           $('.messages').append(html);      
           $('form')[0].reset();
-          $(".input__submit").prop('disabled', false);
+          // $(".input__submit").prop('disabled', false);
         })
      
       .fail(function() {
         alert("メッセージを入力してください");
+      })
+      .always(() => {
+        $(".input__submit").prop('disabled', false);
       })
   });
 
